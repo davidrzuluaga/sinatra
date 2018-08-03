@@ -10,5 +10,7 @@ require 'sinatra'
 # end
 
 get '/' do
-  "HcUy6Re2LLBRtj"
+  
+
+  erb :index
 end

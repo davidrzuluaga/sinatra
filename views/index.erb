@@ -4,11 +4,14 @@
     <title>El título de la página</title>
   </head>
   <body>
-  <h2>Hola dime a quien saludar</h2>
+  <!-- <h2>Hola dime a quien saludar</h2>
   <form action="/hello" method="post">
     <label for="name"><input type="text" id="name" name="name">
     <button type="submit">¡Hola!</button>
-  </form>
+  </form> -->
 
+  <%(1..50).each do |number|%>
+ <p> <%="#{number} #{number%2 == 0 ? "Soy Par!" : "Soy Impar"}"%></p>
+  <%end%>
   </body>
 </html> 
