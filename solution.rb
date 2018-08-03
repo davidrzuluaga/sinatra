@@ -1,7 +1,6 @@
 require 'sinatra'
 
-get '/makers/:nombre' do
-  
+get '/makers/:nombre' || '/makers' do
   if params[:nombre] == nil
     "Hola desconocido!"
   elsif params[:nombre] == ""
@@ -9,6 +8,15 @@ get '/makers/:nombre' do
   else
     "Hola #{params[:nombre]}!"
   end
-  
-  # erb :index
+end
+
+get '/makers' do
+  if params[:nombre] == nil
+    "Hola desconocido!"
+  elsif params[:nombre] == ""
+    "Hola desconocido!"
+  else
+    "Hola #{params[:nombre]}!"
+  end
+
 end
