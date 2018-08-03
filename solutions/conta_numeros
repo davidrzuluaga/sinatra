@@ -1,0 +1,52 @@
+Contador de numeros en cookie
+#Parte Ruby
+
+require 'sinatra'
+get '/' do
+  @number = request.cookies['number'].to_i
+  @number||=0
+  erb :index
+end
+
+
+get '/count' do
+  @number ||= 0
+  @number = request.cookies['number'].to_i
+  @number += 1
+  response.set_cookie('number', value: @number)
+
+  @number
+  redirect '/'
+  erb :index
+
+end
+
+-Parte HTML
+  <h1>Mi cuenta es: <%=@number%></h1>
+  <form action="/count" method="get">
+    
+     <input type="submit" value="Submit">
+  </form> 
+
+--Solucion MKR
+
+# dentro del archivo solution.rb
+
+require 'sinatra'
+
+get '/' do
+  @number = params[:number]
+  erb :index
+end
+<!--  Dentro del archivo index.erb -->
+
+<% if @number %>
+  <h1>Mi cuenta es : <%= @number %></h1>
+<% else %>
+  <h1>Mi cuenta es : 0</h1>
+  <% @number = 0 %>
+<% end %>
+<form action="/">
+  <input type="hidden" value="<%= @number.to_i + 1 %>" name="number">
+  <input type="submit" value="Suma">
+</form>
