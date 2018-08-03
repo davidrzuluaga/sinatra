@@ -4,8 +4,11 @@
     <title>El título de la página</title>
   </head>
   <body>
-
-  <% =@params %>
+  <h2>Hola dime a quien saludar</h2>
+  <form action="/hello" method="post">
+    <label for="name"><input type="text" id="name" name="name">
+    <button type="submit">Enviar</button>
+  </form>
 
   </body>
 </html> 
