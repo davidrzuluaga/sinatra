@@ -5,7 +5,20 @@
   </head>
   <body>
 
-  <% =@params %>
+<form action="/stats">
+ <input type="hidden" value="myFunction()" name="stats">
+   <input type="submit" value="Suma">
+  <%# <button onclick="myFunction()">Try it</button> %>
+</form>
+<%=@index%>
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    var x = navigator.userAgent;
+    document.getElementById("demo").innerHTML = x;
+}
+</script>
 
   </body>
 </html> 
