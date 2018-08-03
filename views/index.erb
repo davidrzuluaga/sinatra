@@ -9,9 +9,11 @@
     <label for="name"><input type="text" id="name" name="name">
     <button type="submit">¡Hola!</button>
   </form> -->
+  <h1><%=@number%> </h1>
+  <form action="/count" method="get">
+    
+    <button type="submit">Suma!</button>
+  </form> 
 
-  <%(1..50).each do |number|%>
- <p> <%="#{number} #{number%2 == 0 ? "Soy Par!" : "Soy Impar"}"%></p>
-  <%end%>
   </body>
 </html> 

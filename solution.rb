@@ -10,7 +10,20 @@ require 'sinatra'
 # end
 
 get '/' do
-  
-
+  @number = request.cookies['number'].to_i
+  @number||=0
   erb :index
+end
+
+
+get '/count' do
+  @number ||= 0
+  @number = request.cookies['number'].to_i
+  @number += 1
+  response.set_cookie('number', value: @number)
+
+  @number
+  redirect '/'
+  erb :index
+
 end
