@@ -4,12 +4,19 @@
     <title>El título de la página</title>
   </head>
   <body>
-   <h2>Abuela Sorda</h2>
-   <p>Di algo Abuela:</p>
-  <form action="/sorda" method="post">
-    <label for="speech"><input type="text" id="name" name="speech">
-      <input type="submit" value="Submit">
-  </form> 
+
+<form action="/stats">
+ <input type="hidden" value="myFunction()" name="stats">
+</form>
+<%=@index%>
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    var x = navigator.userAgent;
+    document.getElementById("demo").innerHTML = x;
+}
+</script>
 
   </body>
 </html> 
