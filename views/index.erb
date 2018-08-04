@@ -5,18 +5,8 @@
   </head>
   <body>
 
-<form action="/stats">
- <input type="hidden" value="myFunction()" name="stats">
-</form>
-<%=@index%>
-<p id="demo"></p>
+<h1><%=@header%></h1>
 
-<script>
-function myFunction() {
-    var x = navigator.userAgent;
-    document.getElementById("demo").innerHTML = x;
-}
-</script>
 
   </body>
 </html> 
