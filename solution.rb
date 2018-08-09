@@ -1,14 +1,11 @@
 require 'sinatra'
 
 get '/' do
-  
-  erb :index
-end
+  if request.env["HTTP_PERMISO"] == "soy-un-token-secreto"
+    msn = "Si lo logramos!"
+  else
+    msn = "Sin Permiso"
+  end
 
-get '/stats' do
-  @stats = params[:stats]
-  @stats
-  redirect '/'
-  erb :index
- 
+  msn
 end
