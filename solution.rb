@@ -1,5 +1,6 @@
 require 'sinatra'
 
+
 get '/' do
   if request.env["HTTP_PERMISO"] == "soy-un-token-secreto"
     msn = "Si lo logramos!"
@@ -9,3 +10,4 @@ get '/' do
 
   msn
 end
+
